@@ -2,6 +2,7 @@
 require "sinatra"
 require "http"
 
+DELAY_TIME = (ENV["DELAY_TIME"] && ENV["DELAY_TIME"].to_i) || 25
 DEPLOY_API_URL = "https://api.speedcurve.com/v1/deploy"
 
 post "/deploy/:key/:site_id" do
@@ -10,7 +11,7 @@ post "/deploy/:key/:site_id" do
     detail: %Q{#{params[:app]} #{params[:release]} #{params[:head]} #{params[:git_log]} was deployed to Heroku by #{params[:user]}},
     note: %Q{#{params[:app]} #{params[:release]} #{params[:head]} #{params[:git_log]}},
   }
-  sleep 30
+  sleep DELAY_TIME
   response = HTTP
               .basic_auth(
                 user: "params[:key]",

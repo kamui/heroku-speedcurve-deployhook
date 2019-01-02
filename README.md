@@ -23,6 +23,6 @@ Add the Heroku Deploy add-on like this:
 heroku addons:add deployhooks:http --url=https://your-heroku-speedcurve-deployhook-app.herokuapp.com/deploy/your-speedcurve-api-key/your-site-id
 ```
 
-`heroku-speedcurve-deployhook` will wait 30 seconds to give your new app time to warm up.
+`heroku-speedcurve-deployhook` will, by default, wait 25 seconds to give your new app time to warm up. If you want to override this, you can set an environment variable named `DELAY_TIME`. The value is in seconds.
 
 Now, SpeedCurve will create a deploy whenever your app is deployed on Heroku.
