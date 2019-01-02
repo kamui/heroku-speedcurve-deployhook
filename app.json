@@ -1,0 +1,10 @@
+{
+  "name": "Heroku SpeedCurve Deploy Hook",
+  "description": "Create Heroku deploys in SpeedCurve",
+  "keywords": [
+    "heroku",
+    "speedcurve"
+  ],
+  "repository": "https://github.com/kamui/heroku-speedcurve-deployhook",
+  "success_url": "https://github.com/kamui/heroku-speedcurve-deployhook"
+}
