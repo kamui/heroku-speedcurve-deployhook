@@ -14,7 +14,7 @@ post "/deploy/:key/:site_id" do
   sleep DELAY_TIME
   response = HTTP
               .basic_auth(
-                user: "params[:key]",
+                user: params[:key],
                 pass: "x",
               )
               .post(DEPLOY_API_URL, json: json)
